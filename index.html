@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset ="UTF-8">
+<title>Akarie社内システムログインページ</title>
+<link rel ="stylesheet" href ="stylesheet_employee.css" type="text/css">
+</head>
+
+<body>
+
+<div align ="center">
+
+  <h2>Akarie 社内システム</h2>
+  <h3>ログインページ</h3>
+
+  <p><font color ="#ff0000"><###ERROR###></font></p>
+
+<table>
+
+ <form method="post" action="./login_check.php">
+
+<tr>
+  <td>ID</td>
+</tr>
+
+<tr>
+  <td><input type="text" style ="width:200px; height:20px;" id="login_id" name="login_id" placeholder="IDを入力してください"></input></td>
+</tr>
+
+<tr>
+  <td>パスワード</td>
+</tr>
+
+<tr>
+  <td><input type="password" style ="width:200px; height:20px;" id="password" name="password" placeholder="パスワードを入力してください"></input></td>
+</tr>
+
+</table>
+
+  <p><input class ="btn" type="button" onclick="submit();" value="ログイン"></input></p>
+
+ </form>
+</div>
+</body>
+</html>
