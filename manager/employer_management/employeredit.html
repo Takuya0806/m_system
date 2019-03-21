@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+<meta charset ="UTF-8">
+<title>社員情報 編集ページ</title>
+<link rel ="stylesheet" href ="stylesheet_manager.css" type="text/css">
+</head>
+
+<body>
+
+<div align ="center">
+
+  <h2>社員管理システム</h2>
+
+  <p align ="right">【<font color ="#ff0000">管理者</font>】<###LOGINNAME###>がログイン中<a href ="http://neco.akarie.co.jp/~t_katsumata/akarie/index.php"> （ログアウト） </a></p>
+
+  <h3 align ="center">社員情報 編集ページ</h3>
+
+  <p><input class ="btn" type = "button" value ="メニュー画面へ" onclick ="location.href ='./menu.php'">
+     <input class ="btn2" type = "button" value ="社員詳細へ" onclick ="location.href ='./employerdetail.php?ei=<###EMPLOYERID###>'"></p>
+
+<div class ="employerdetail">
+
+<form method ="post" action ="./employer_regist.php">
+
+<table>
+
+<tr>
+  <td>社員ID</td><td><###EMPLOYERID###></td>
+</tr>
+
+<tr>
+  <td>社員名</td><td><input type ="text" name ="employer_name" value ="<###EMPLOYERNAME###>" /></td>
+</tr>
+
+<tr>
+  <td>社員名（かな）</td><td><input type ="text" name ="employer_name_kana" value ="<###KANA###>" /></td>
+</tr>
+
+<tr>
+  <td>権限</td><td><###MANAGERFLAG###></td>
+</tr>
+
+<tr>
+  <td>所属部</td><td><select name ="department"><###DEPARTMENT###></select></td>
+</tr>
+
+<tr>
+  <td>役職</td><td><select name ="position"><###POSITION###></select></td>
+</tr>
+
+<tr>
+  <td>入社日</td>
+  <td><input type ="date" name ="join" value ="<###JOINDATE###>" /></td> 
+</tr>
+
+<tr>
+  <td>退社日</td>
+  <td><input type ="date" name ="leave" value ="<###LEAVEDATE###>" /></td> 
+</tr>
+
+<tr>
+  <td>住所</td><td><input type ="text" name ="address" style ="width: 300px" value ="<###ADDRESS###>" /></td>
+</tr>
+
+<tr>
+  <td>備考</td><td><textarea name="note" rows="5" cols="50"><###NOTE###></textarea></td>
+</tr>
+
+  <input type ="hidden" name ="employer_id" value ="<###EMPLOYERID###>" />
+
+</table>
+
+  <p><input type ="radio" name ="submit_option" value ="1" checked />更新する
+     <input type ="radio" name ="submit_option" value ="2" />削除する</p>
+
+  <p><input class ="btn2" type="button" onclick="submit();" value="送信" /></p>
+
+</form>
+</div>
+</div>
+</body>
+</html>

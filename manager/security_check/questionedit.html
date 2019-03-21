@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+<meta charset ="UTF-8">
+<title>質問内容 編集ページ</title>
+<link rel ="stylesheet" href ="stylesheet_manager.css" type="text/css">
+</head>
+
+<body>
+
+<div align ="center">
+
+  <h2>セキュリティリテラシーチェックシステム</h2>
+
+  <p align ="right">【<font color ="#ff0000">管理者</font>】<###LOGINNAME###>がログイン中<a href ="http://neco.akarie.co.jp/~t_katsumata/akarie/index.php"> （ログアウト） </a></p>
+
+  <h3 align ="center">質問内容 編集ページ</h3>
+
+  <p><input class ="btn" type = "button" value ="質問一覧へ" onclick ="location.href ='./questionlist.php'"></p>
+
+<div class ="questiondetail">
+
+<form method ="post" action ="./question_regist.php">
+
+<table>
+
+<tr>
+  <td>・質問内容</td><td></td><td><input type ="text" name ="title" value ="<###QUESTIONTITLE###>" /></td>
+</tr>
+
+<tr>
+  <td>・回答タイプ</td><td></td><td><###ANSWERTYPE###></td>
+</tr>
+
+<tr>
+  <td>・回答内容（最大10個）</td><td></td><td><font color ="#ff0000">※ </font>選択肢タイプの場合のみ記入。</td>
+</tr>
+
+<tr>
+  <td>・正解値</td><td><###QUESTIONBODY1###></td>
+</tr>
+
+<tr>
+  <td></td><td><###QUESTIONBODY2###></td>
+</tr>
+
+<tr>
+  <td></td><td><###QUESTIONBODY3###></td>
+</tr>
+
+<tr>
+  <td></td><td><###QUESTIONBODY4###></td>
+</tr>
+
+<tr>
+  <td></td><td><###QUESTIONBODY5###></td>
+</tr>
+
+<tr>
+  <td></td><td><###QUESTIONBODY6###></td>
+</tr>
+
+<tr>
+  <td></td><td><###QUESTIONBODY7###></td>
+</tr>
+
+<tr>
+  <td></td><td><###QUESTIONBODY8###></td>
+</tr>
+
+<tr>
+  <td></td><td><###QUESTIONBODY9###></td>
+</tr>
+
+<tr>
+  <td></td><td><###QUESTIONBODY10###></td>
+</tr>
+
+<tr>
+  <td>・配点（半角数字）</td><td></td><td><input type ="text" name ="score" style ="width: 15px; padding: 5px 10px;" value ="<###SCORE###>" /></td>
+</tr>
+
+  <input type ="hidden" name ="q_id" value ="<###QUESTIONID###>" />
+
+</table>
+
+  <p><input type ="radio" name ="submit_option" value ="1" checked />更新する
+  <input type ="radio" name ="submit_option" value ="2" />削除する</p>
+
+  <p><input class ="btn2" type="button" onclick="submit();" value="送信" /></p>
+
+</form>
+</div>
+</div>
+</body>
+</html>

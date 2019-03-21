@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+<meta charset ="UTF-8">
+<title>社員情報 詳細ページ</title>
+<link rel ="stylesheet" href ="stylesheet_employer_info.css" type="text/css">
+</head>
+
+<body>
+
+<div align ="center">
+
+  <h2>社員情報</h2>
+
+  <p align ="right"><###LOGINNAME###>がログイン中<a href ="http://neco.akarie.co.jp/~t_katsumata/akarie/index.php"> （ログアウト） </a></p>
+
+  <h3 align ="center">社員情報 詳細ページ</h3>
+
+  <p><input class ="btn" type = "button" value ="メニュー画面へ" onclick ="location.href ='http://neco.akarie.co.jp/~t_katsumata/akarie/employee/menu.php'">
+     <input class ="btn2" type = "button" value ="編集画面へ" onclick ="location.href ='./employeredit.php?ei=<###EMPLOYERID###>'"></p>
+
+<div class ="employerdetail">
+
+<table>
+
+<tr>
+  <td>社員ID</td><td><###EMPLOYERID###></td>
+</tr>
+
+<tr>
+  <td>社員名</td><td><###EMPLOYERNAME###></td>
+</tr>
+
+<tr>
+  <td>社員名（かな）</td><td><###KANA###></td>
+</tr>
+
+<tr>
+  <td>権限</td><td><###MANAGERFLAG###></td>
+</tr>
+
+<tr>
+  <td>所属部</td><td><###DEPARTMENT###></td>
+</tr>
+
+<tr>
+  <td>役職</td><td><###POSITION###></td>
+</tr>
+
+<tr>
+  <td>入社日</td><td><###JOINDATE###></td>
+</tr>
+
+<tr>
+  <td>退社日</td><td><###LEAVEDATE###></td>
+</tr>
+
+<tr>
+  <td>住所</td><td><###ADDRESS###></td>
+</tr>
+
+<tr>
+  <td>備考</td><td><###NOTE###></td>
+</tr>
+
+</table>
+
+</form>
+</div>
+</div>
+</body>
+</html>

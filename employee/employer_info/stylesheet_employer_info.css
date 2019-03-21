@@ -1,0 +1,141 @@
+a {
+      text-decoration: none;
+    }
+
+a:link {
+      color: #0000ff;
+    }
+
+a:visited {
+      color: #0000ff;
+    }
+
+a:hover {
+      color: #ff0000;
+    }
+
+.menu a {
+    display: block;
+    background-color: #fff;
+    border: 3px solid #2E64FE;
+    border-radius: 8px;
+    padding: 1em;
+    width: 150px;
+
+   }
+
+.answerlist table {
+      margin-left: auto;
+      margin-right: auto;
+      border-collapse: collapse;
+      border : 2px solid #000000;
+      text-align: center;
+   }
+
+.answerlist tr {
+    border: 1px solid #000000;
+   }
+
+.answerlist th {
+    padding: 10px 20px;
+    background-color: #00bcd4;
+    border: 1px solid #000000;
+   }
+
+.answerlist td {
+    padding: 10px 20px;
+    border: 1px solid #000000;
+   }
+
+.answerdetail table {
+      margin-left: auto;
+      margin-right: auto;
+      border-collapse: collapse;
+      border: 2px solid #000000;
+   }
+
+.answerdetail tr {
+  /*  border: 1px solid #000000; */
+   }
+
+.answerdetail th {
+    padding: 10px 20px;
+    background-color: #81BEF7;
+    border: 1px solid #000000;
+   }
+
+.answerdetail td {
+    padding: 10px 20px;
+    border-color: #BDBDBD;
+    border-style: solid;
+    border-width: 1px 0px;
+   }
+
+.answerdetail td:first-child {
+    border: 1px solid #BDBDBD;
+    text-align: center;
+   }
+
+.employerdetail table {
+      margin-left: auto;
+      margin-right: auto;
+      border-collapse: collapse;
+      border: 2px solid #000000;
+   }
+
+.employerdetail td {
+    padding: 10px 20px;
+   }
+
+.employerdetail input[type ="text"] {
+   padding: 5px 10px;
+   }
+
+.employerdetail input[type ="password"] {
+   padding: 5px 10px;
+   }
+
+.questionlist table {
+      margin-left: auto;
+      margin-right: auto;
+      border-collapse: collapse;
+      border : 2px solid #000000;
+   }
+
+.questionlist td {
+    padding: 5px 10px;
+   }
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #FFF;
+    background: #fd9535; /*色*/
+    border: solid 1px #d27d00; /*線色*/
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+   }
+
+.btn:hover{
+    background: #FF4000;
+  }
+
+.btn2 {
+    position: relative;
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #FFF;
+    background: #03A9F4; /*色*/
+    border: solid 1px #0f9ada; /*線色*/
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+   }
+
+.btn2:hover {
+    background: #668ad8;
+   }

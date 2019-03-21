@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+<meta charset ="UTF-8">
+<title>質問ページ</title>
+<link rel ="stylesheet" href ="stylesheet_employee.css" type="text/css">
+</head>
+
+<body>
+
+<div align ="center">
+
+<h2>セキュリティリテラシーチェックシステム</h2>
+
+<p align ="right"><###LOGINNAME###>がログイン中<a href ="../../index.php"> （ログアウト） </a></p>
+
+<h3>質問ページ</h3>
+
+<p><input class ="btn" type = "button" value ="メニュー画面へ" onclick ="location.href ='./menu.php'"></p>
+
+<div class ="questionlist">
+
+<table>
+
+<form method ="post" action ="./thanks.php">
+
+<###QUESTIONLIST###>
+
+<input type ="hidden" name ="employer_id" value ="<###EMPLOYERID###>">
+<input type ="hidden" name ="employer_name" value ="<###LOGINNAME###>">
+<input type ="hidden" name ="total" value ="<###QUESTIONTOTAL###>">
+
+</table>
+
+  <p><input class ="btn" type="button" onclick="submit();" value="回答する"></p>
+
+</form>
+</div>
+</div>
+</body>
+</html>

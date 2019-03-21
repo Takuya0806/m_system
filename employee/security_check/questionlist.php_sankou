@@ -1,0 +1,118 @@
+<?php
+
+// 設定ファイルの読み込み
+require_once('./database_config.php');
+
+// セッション
+session_save_path('/home/aoyama/session/');
+
+session_start();
+$login_name=$_SESSION['shain_mei'];
+$login_id=$_SESSION['shain_bango'];
+
+// データベースに接続
+$link=mysqli_connect(DB_SERVER,DB_ACCOUNT_ID,DB_ACCOUNT_PW,DB_NAME);
+if (!$link) {
+echo "Error: Unable to connect to MySQL." . PHP_EOL;
+echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+exit;
+}
+
+// 抽出する際のエンコードを設定
+mysqli_set_charset($link,"utf8");
+
+// Query
+// 質問内容抽出
+$query='select q_id,title,answer_type,body_1,body_2,body_3,body_4,body_5,body_6,body_7,body_8,body_9,body_10 from question_master where del_flag = 0 order by q_id';
+
+// 後ほどhtmlファイルで置き換えするための変数の初期化
+$question_line="";
+
+//Execute
+
+if ($result = mysqli_query($link, $query)) {
+
+$i=0;
+
+$i++;
+
+while ($row = mysqli_fetch_row($result)) {
+
+   $qid[$i] = $row[0];
+
+   $title[$i] = $row[1];
+
+   $a_type[$i] = $row[2];
+
+   $body_1[$i] = $row[3];
+   $body_2[$i] = $row[4];
+   $body_3[$i] = $row[5];
+   $body_4[$i] = $row[6];
+   $body_5[$i] = $row[7];
+   $body_6[$i] = $row[8];
+   $body_7[$i] = $row[9];
+   $body_8[$i] = $row[10];
+   $body_9[$i] = $row[11];
+   $body_10[$i] = $row[12];
+
+if($a_type[$i] == 0) {
+
+   $question_line.=
+   "<tr><td>・設問".$qid[$i]."</td><td>".$title[$i]."</td></tr>\n
+    <tr><td></td><td><input type='radio' name='answer_".$qid[$i]."' value='1' checked />".$body_1[$i]."</td></tr>
+    <tr><td></td><td><input type='radio' name='answer_".$qid[$i]."' value='2'>".$body_2[$i]."</td></tr>
+    <tr><td></td><td><input type='radio' name='answer_".$qid[$i]."' value='3'>".$body_3[$i]."</td></tr>
+    <tr><td></td><td><input type='radio' name='answer_".$qid[$i]."' value='4'>".$body_4[$i]."</td></tr>
+    <tr><td></td><td><input type='radio' name='answer_".$qid[$i]."' value='5'>".$body_5[$i]."</td></tr>
+    <tr><td></td><td><input type='radio' name='answer_".$qid[$i]."' value='6'>".$body_6[$i]."</td></tr>
+    <tr><td></td><td><input type='radio' name='answer_".$qid[$i]."' value='7'>".$body_7[$i]."</td></tr>
+    <tr><td></td><td><input type='radio' name='answer_".$qid[$i]."' value='8'>".$body_8[$i]."</td></tr>
+    <tr><td></td><td><input type='radio' name='answer_".$qid[$i]."' value='9'>".$body_9[$i]."</td></tr>
+    <tr><td></td><td><input type='radio' name='answer_".$qid[$i]."' value='10'>".$body_10[$i]."</td></tr>\n";
+
+     }elseif($a_type[$i] == 1) {
+
+   $question_line.=
+    "<tr><td>・設問".$qid[$i]."</td><td>".$title[$i]."</td></tr>\n
+     <tr><td></td><td><textarea name='answer_".$qid[$i]."' rows='4' cols='40' placeholder='500文字'></textarea></td></tr>\n";
+
+     }
+
+}
+/* 結果セットを開放します */
+
+mysqli_free_result($result);
+
+}
+
+mysqli_close($link);
+
+var_dump($a_type);
+
+// ファイル内容を変数に取り込む
+$fp=fopen('./questionlist.html','r');
+
+// ファイルの最後まで処理を行う
+while(!feof($fp)) {
+// 1行ずつファイルを読み込み変数にセット
+$line=fgets($fp);
+
+// データベースからセットする項目について置き換え（動的部分）
+
+// ログイン名
+$line1=str_replace("<###LOGINNAME###>",$login_name,$line);
+
+// 質問リスト
+$lines=str_replace("<###QUESTIONLIST###>",$question_line,$line1);
+
+//  1行ずつ出力
+echo $lines;
+}
+
+fclose($fp);
+
+exit();
+
+?>
+

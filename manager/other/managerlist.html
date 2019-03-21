@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+<meta charset ="UTF-8">
+<title>管理者情報 一覧ページ</title>
+<link rel ="stylesheet" href ="stylesheet_manager.css" type="text/css">
+</head>
+
+<body>
+
+<div align ="center">
+
+  <h2>セキュリティリテラシーチェックシステム</h2>
+
+  <p align ="right">【<font color ="#ff0000">管理者</font>】<###LOGINNAME###>がログイン中<a href ="./login.php"> （ログアウト） </a></p>
+
+  <h3 align ="center">管理者情報 一覧ページ</h3>
+
+  <p><input class ="btn" type = "button" value ="メニュー画面へ" onclick ="location.href ='./menu.php'">
+     <input class ="btn2" type = "button" value ="新規登録" onclick ="location.href ='./manager_signup.php'"></p>
+
+<div class ="answerlist">
+
+<table>
+
+<tr>
+  <th>管理者番号</th><th>管理者名</th><th></th>
+</tr>
+
+<###MANAGERLIST###>
+
+</table>
+</div>
+</div>
+</body>
+</html>

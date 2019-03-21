@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+<meta charset ="UTF-8">
+<title>役職 編集ページ</title>
+<link rel ="stylesheet" href ="stylesheet_manager.css" type="text/css">
+</head>
+
+<body>
+
+<div align ="center">
+
+  <h2>社員管理システム</h2>
+
+  <p align ="right">【<font color ="#ff0000">管理者</font>】<###LOGINNAME###>がログイン中<a href ="http://neco.akarie.co.jp/~t_katsumata/akarie/index.php"> （ログアウト） </a></p>
+
+  <h3 align ="center">役職 編集ページ</h3>
+
+  <p><input class ="btn" type = "button" value ="役職一覧へ" onclick ="location.href ='./positionlist.php'"></p>
+
+<div class ="employerdetail">
+
+<form method ="post" action ="./position_regist.php">
+
+<table>
+
+<tr>
+  <td>役職名</td><td><input type ="text" name ="position_name" value ="<###POSITIONNAME###>" /></td>
+</tr>
+
+  <!-- ダミー -->
+  <input type="text" name="dummy" style="display:none;">
+
+  <input type ="hidden" name ="position_id" value ="<###POSITIONID###>" />
+
+</table>
+
+  <p><input type ="radio" name ="submit_option" value ="1" checked />更新する
+     <input type ="radio" name ="submit_option" value ="2" />削除する</p>
+
+  <p><input class ="btn2" type="button" onclick="submit();" value="送信" /></p>
+
+</form>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+<meta charset ="UTF-8">
+<title>所属部署 一覧ページ</title>
+<link rel ="stylesheet" href ="stylesheet_manager.css" type="text/css">
+</head>
+
+<body>
+
+<div align ="center">
+
+  <h2>社員管理システム</h2>
+
+  <p align ="right">【<font color ="#ff0000">管理者</font>】<###LOGINNAME###>がログイン中<a href ="http://neco.akarie.co.jp/~t_katsumata/akarie/index.php"> （ログアウト） </a></p>
+
+  <h3 align ="center">所属部署 一覧ページ</h3>
+
+  <p><input class ="btn" type = "button" value ="メニュー画面へ" onclick ="location.href ='./menu.php'">
+     <input class ="btn2" type = "button" value ="新規登録" onclick ="location.href ='./department_signup.php'"></p>
+
+<div class ="answerlist">
+
+<table>
+
+<tr>
+  <th>所属部署名</th><th></th>
+</tr>
+
+<###DEPARTMENTLIST###>
+
+</table>
+</div>
+</div>
+
+</body>
+</html>
