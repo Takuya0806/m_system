@@ -67,7 +67,7 @@
 
    // keep login information between screens    
 
-   session_save_path('/home/t_katsumata/session/');
+   // session_save_path('/home/t_katsumata/session/');
 
    session_start();
 

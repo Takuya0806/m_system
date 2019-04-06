@@ -1,10 +1,10 @@
 <?php
 
 // 設定ファイルの読み込み
-require_once('/home/t_katsumata/public_html/akarie/database_config.php');
+require_once('../database_config.php');
 
 // セッション
-session_save_path('/home/t_katsumata/session/');
+// session_save_path('/home/t_katsumata/session/');
 
 session_start();
 $login_name=$_SESSION['shain_mei'];
