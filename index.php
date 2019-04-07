@@ -1,6 +1,6 @@
 <?php
 
-  require_once('./errorlist.php');
+  require_once($_SERVER['DOCUMENT_ROOT'] .'/m_system/errorlist.php');
 
   if(isset($_GET['em'])) {
 

@@ -1,17 +1,17 @@
 <?php
 
-// 設定ファイルの読み込み
-require_once('/home/t_katsumata/public_html/akarie/database_config.php');
+    // 設定ファイルの読み込み
+    require_once($_SERVER['DOCUMENT_ROOT'] .'/m_system/database_config.php');
 
-// GET PARAMETER
-$target_answer_date=$_GET['date'];
+    // GET PARAMETER
+    $target_answer_date=$_GET['date'];
 
-// セッション
-session_save_path('/home/t_katsumata/session/');
+    // セッション
+    // session_save_path('/home/t_katsumata/session/');
 
-session_start();
-$login_name=$_SESSION['shain_mei'];
-$login_id=$_SESSION['login_id'];
+    session_start();
+    $login_name=$_SESSION['shain_mei'];
+    $login_id=$_SESSION['login_id'];
 
 // データベースに接続
 $link=mysqli_connect(DB_SERVER,DB_ACCOUNT_ID,DB_ACCOUNT_PW,DB_NAME);
@@ -196,4 +196,3 @@ fclose($fp);
 
 exit();
 
-?>

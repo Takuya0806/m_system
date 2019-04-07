@@ -1,14 +1,14 @@
 <?php
 
-// 設定ファイルの読み込み
-require_once('/home/t_katsumata/public_html/akarie/database_config.php');
+    // 設定ファイルの読み込み
+    require_once($_SERVER['DOCUMENT_ROOT'] .'/m_system/database_config.php');
 
-// セッション
-session_save_path('/home/t_katsumata/session/');
+    // セッション
+    // session_save_path('/home/t_katsumata/session/');
 
-session_start();
-$login_name=$_SESSION['shain_mei'];
-$login_id=$_SESSION['login_id'];
+    session_start();
+    $login_name=$_SESSION['shain_mei'];
+    $login_id=$_SESSION['login_id'];
 
 // データベースに接続
 $link=mysqli_connect(DB_SERVER,DB_ACCOUNT_ID,DB_ACCOUNT_PW,DB_NAME);
@@ -24,8 +24,7 @@ mysqli_set_charset($link,"utf8");
 
 // Query
 // 社員情報一覧抽出
-
-$query='select * from employer_master,department_master,position_master where employer_master.department_id = department_master.department_id and employer_master.position_id = position_master.position_id and employer_master.del_flg =0 order by employer_master.employer_id';
+$query ='select * from employer_master,department_master,position_master where employer_master.department_id = department_master.department_id and employer_master.position_id = position_master.position_id and employer_master.del_flg = 0 order by employer_master.employer_id';
 
 // 後ほどhtmlファイルで置き換えするための変数の初期化
 $employer_list="";
@@ -60,7 +59,7 @@ $line=fgets($fp);
 // ログイン名
 $line1=str_replace("<###LOGINNAME###>",$login_name,$line);
 
-// 回答一覧
+// 社員一覧
 $line2=str_replace("<###EMPLOYERLIST###>",$employer_list,$line1);
 
 //代入
@@ -74,5 +73,3 @@ echo $lines;
 fclose($fp);
 
 exit();
-
-?>
