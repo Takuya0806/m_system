@@ -2,7 +2,7 @@
 <head>
 <meta charset ="UTF-8">
 <title>社員情報 一覧ページ</title>
-<link rel ="stylesheet" href ="stylesheet_manager.css" type="text/css">
+<link rel ="stylesheet" href ="./stylesheet_manager.css" type="text/css">
 </head>
 
 <body>
@@ -15,20 +15,59 @@
 
   <h3 align ="center">社員情報 一覧ページ</h3>
 
-  <p><input class ="btn" type = "button" value ="メニュー画面へ" onclick ="location.href ='./menu.php'">
+  <p><input class ="btn" type = "button" value ="メニュー画面へ" onclick ="location.href ='./menu.php'"> &nbsp;
      <input class ="btn2" type = "button" value ="新規登録" onclick ="location.href ='./employer_signup.php'"></p>
 
 <div class ="answerlist">
 
+  <form method ="post" action ="./employerlist.php">
+      <p>
+          <select name ="list_per_page">
+          <option value ="10">表示件数</option>
+          <option value ="5">5件</option>
+          <option value ="10">10件</option>
+          <option value ="15">15件</option>
+          <option value ="20">20件</option>
+          <option value ="25">25件</option>
+          <option value ="30">30件</option>
+          <option value ="35">35件</option>
+          <option value ="40">40件</option>
+          <option value ="45">45件</option>
+          <option value ="50">50件</option>
+          </select> &nbsp;
+
+          <select name ="sort_option">
+          <###SORT###>
+          </select> &nbsp;
+
+          <select name ="filter_department">
+          <option value ="">所属部署</option>
+          <###DEPARTMENT###>
+          </select> &nbsp;
+
+          <select name ="filter_position">
+          <option value ="">役職</option>
+          <###POSITION###>
+          </select> &emsp;
+
+          <input class ="btn3" type="button" onclick="submit();" value="絞り込む" />
+      </p>
+  </form>
+
 <table>
 
 <tr>
-  <th>社員ID</th><th>社員名</th><th>所属部</th><th>役職</th><th></th>
+  <th>社員ID</th><th>社員名</th><th>所属部</th><th>役職</th><th>権限</th><th></th>
 </tr>
 
 <###EMPLOYERLIST###>
 
 </table>
+
+<p><###PREVIOUS###> <###PAGELIST###> <###NEXT###></p>
+
+<p><###NUMBER###></p>
+
 </div>
 </div>
 </body>
