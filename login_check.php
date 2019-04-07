@@ -2,7 +2,7 @@
 
    // 設定ファイルの読み込み
 
-   require_once('./database_config.php');
+   require_once($_SERVER['DOCUMENT_ROOT'] .'/m_system/database_config.php');
 
    //Post Parameter
 

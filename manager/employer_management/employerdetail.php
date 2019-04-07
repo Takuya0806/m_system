@@ -1,12 +1,12 @@
 <?php
 
-   // 設定ファイルの読み込み
-    require_once('/home/t_katsumata/public_html/akarie/database_config.php');
+    // 設定ファイルの読み込み
+    require_once($_SERVER['DOCUMENT_ROOT'] .'/m_system/database_config.php');
 
     // GET PARAMETER
     $target_user_id=$_GET['ei'];
 
-    session_save_path('/home/t_katsumata/session/');
+    //session_save_path('/home/t_katsumata/session/');
 
     session_start();
     $login_name=$_SESSION['shain_mei'];
@@ -213,5 +213,3 @@
     fclose($fp);
 
     exit();
-
-?>

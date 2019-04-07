@@ -7,5 +7,3 @@
    define("DB_ACCOUNT_PW",'root');
 
    define("DB_NAME",'m_system');
-
-?>

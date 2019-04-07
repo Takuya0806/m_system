@@ -1,14 +1,14 @@
 <?php
 
-// 設定ファイルの読み込み
-require_once('/home/t_katsumata/public_html/akarie/database_config.php');
+    // 設定ファイルの読み込み
+    require_once($_SERVER['DOCUMENT_ROOT'] .'/m_system/database_config.php');
 
-// セッション
-session_save_path('/home/t_katsumata/session/');
+    // セッション
+    // session_save_path('/home/t_katsumata/session/');
 
-session_start();
-$login_name=$_SESSION['shain_mei'];
-$login_id=$_SESSION['login_id'];
+    session_start();
+    $login_name=$_SESSION['shain_mei'];
+    $login_id=$_SESSION['login_id'];
 
 // データベースに接続
 $link=mysqli_connect(DB_SERVER,DB_ACCOUNT_ID,DB_ACCOUNT_PW,DB_NAME);
@@ -23,7 +23,7 @@ exit;
 mysqli_set_charset($link,"utf8");
 
 // Query
-// 社員情報一覧抽出
+// 所属部情報一覧抽出
 $query ='select * from department_master order by department_id';
 
 // 後ほどhtmlファイルで置き換えするための変数の初期化
@@ -73,5 +73,3 @@ echo $lines;
 fclose($fp);
 
 exit();
-
-?>

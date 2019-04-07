@@ -1,10 +1,10 @@
 <?php
 
     // 設定ファイルの読み込み
-    require_once('/home/t_katsumata/public_html/akarie/database_config.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] .'/m_system/database_config.php');
 
     //  セッション処理
-    session_save_path('/home/t_katsumata/session/');
+    // session_save_path('/home/t_katsumata/session/');
 
     session_start();
     $login_name=$_SESSION['shain_mei'];
@@ -42,7 +42,6 @@
    // 抽出する際のエンコードを設定
    mysqli_set_charset($link,"utf8");
 
-   //  社員情報 新規登録
    if($_POST['title'] !="") {
 
    // 回答内容と正解値を同じにする（a_radioをcorrectに変換）
@@ -97,7 +96,7 @@
 
     header ('location: ./questionlist.php');
 
-   }else{
+   } else {
 
      echo "質問内容が入力されていません。";
 
@@ -107,4 +106,4 @@
 
    mysqli_close($link);
 
-?>
+   exit();

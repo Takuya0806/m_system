@@ -1,8 +1,7 @@
 <?php
 
-   // 設定ファイルの読み込み
-
-		require_once('/home/t_katsumata/public_html/akarie/database_config.php');
+    // 設定ファイルの読み込み
+    require_once($_SERVER['DOCUMENT_ROOT'] .'/m_system/database_config.php');
 
     session_start();
     $login_name=$_SESSION['shain_mei'];
@@ -11,8 +10,8 @@
     // POST PARAMETER
     $p_name=$_POST['position_name'];
 
-   //Database connect
-   $link=mysqli_connect(DB_SERVER,DB_ACCOUNT_ID,DB_ACCOUNT_PW,DB_NAME);
+    //Database connect
+    $link=mysqli_connect(DB_SERVER,DB_ACCOUNT_ID,DB_ACCOUNT_PW,DB_NAME);
 
    if (!$link) {
 
@@ -42,7 +41,7 @@
 
 	} else {
 
-			header('location: ./position_signup.php?em=2');
+			header('location: ./position_signup.php?em=3');
 
 	}
 
@@ -54,5 +53,3 @@
    mysqli_close($link);
 
    exit;
-
-?>

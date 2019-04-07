@@ -1,14 +1,14 @@
 <?php
 
-// 設定ファイルの読み込み
-require_once('/home/t_katsumata/public_html/akarie/database_config.php');
+    // 設定ファイルの読み込み
+    require_once($_SERVER['DOCUMENT_ROOT'] .'/m_system/database_config.php');
 
-// セッション
-session_save_path('/home/t_katsumata/session/');
+    // セッション
+    // session_save_path('/home/t_katsumata/session/');
 
-session_start();
-$login_name=$_SESSION['shain_mei'];
-$login_id=$_SESSION['login_id'];
+    session_start();
+    $login_name=$_SESSION['shain_mei'];
+    $login_id=$_SESSION['login_id'];
 
 // データベースに接続
 $link=mysqli_connect(DB_SERVER,DB_ACCOUNT_ID,DB_ACCOUNT_PW,DB_NAME);
@@ -24,7 +24,7 @@ mysqli_set_charset($link,"utf8");
 
 // Query
 // 質問内容抽出
-$query='select q_id,title,answer_type,body_1,body_2,body_3,body_4,body_5,body_6,body_7,body_8,body_9,body_10,correct,score from question_master where del_flag = 0 order by q_id';
+$query='select q_id,title,answer_type,body_1,body_2,body_3,body_4,body_5,body_6,body_7,body_8,body_9,body_10,correct,score from question_master where del_flg = 0 order by q_id';
 
 // 後ほどhtmlファイルで置き換えするための変数の初期化
 $question_line="";
@@ -55,7 +55,7 @@ while ($row = mysqli_fetch_row($result)) {
    $score[$i] = $row[14];
 
    //質問内容セット(hiddenに質問ID・質問内容・正解番号・得点セット)
-   $question_line.="<tr><td>・設問".$i."</td><td><font color =\"#0404B4\">".$title[$i]."</font></td></tr>
+   $question_line.="<tr><td>・質問".$i."</td><td><font color =\"#0404B4\">".$title[$i]."</font></td></tr>
 <tr><td><input type =\"hidden\" name =\"q_".$i."\" value =\"".$i."\">
 <input type =\"hidden\" name =\"title_".$i."\" value =\"".$title[$i]."\">
 <input type =\"hidden\" name =\"a_type".$i."\" value =\"".$a_type[$i]."\">
@@ -174,5 +174,3 @@ echo $lines;
 fclose($fp);
 
 exit();
-
-?>
