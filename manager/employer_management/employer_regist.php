@@ -1,10 +1,10 @@
 <?php
 
     // 設定ファイルの読み込み
-    require_once('/home/t_katsumata/public_html/akarie/database_config.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] .'/m_system/database_config.php');
 
-    //  セッション処理
-    session_save_path('/home/t_katsumata/session/');
+    // セッション処理
+    // session_save_path('/home/t_katsumata/session/');
 
     session_start();
     $login_name=$_SESSION['shain_mei'];
@@ -69,5 +69,3 @@
    }
 
    mysqli_close($link);
-
-?>
