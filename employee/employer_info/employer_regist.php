@@ -3,7 +3,7 @@
     // 設定ファイルの読み込み
     require_once($_SERVER['DOCUMENT_ROOT'] .'/m_system/database_config.php');
 
-    //  セッション処理
+    // セッション処理
     // session_save_path('/home/t_katsumata/session/');
 
     session_start();
@@ -35,11 +35,9 @@
    //  社員情報 更新
    if($id && $password !="") {
 
-       $query='update shain_info set login_id ="'.$id.'",password ="'.$password.'" where employer_id='.$e_id;
+        $query='update employer_master set login_id ="'.$id.'",password ="'.$password.'" where employer_id ='.$e_id;
 
     header ('location: ../menu.php');
-
-    exit;
 
    } else {
 
@@ -47,5 +45,15 @@
 
    }
 
+   //Execute
+   if ($result = mysqli_query($link, $query)) {
+
+   } else {
+
+     echo "Can't spacy no person";
+
+     exit;
+
+   }
 
    mysqli_close($link);
