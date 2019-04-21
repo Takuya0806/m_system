@@ -298,14 +298,12 @@ $query ='select count(*) from employer_master,department_master,position_master 
   if ($result = mysqli_query($link,$query)) {
 
       /* 結果セットの行数 */
-      $row = mysqli_fetch_array($result, MYSQL_ASSOC);
+      $row = mysqli_fetch_array($result);
       $total = $row['count(*)'];
 
       // 結果セット開放
       mysqli_free_result($result);
   }
-
-// var_dump($total);
 
 // トータルを件数で割ってceilで繰り上げ
 $total_pages = ceil($total / $list_per_page);
